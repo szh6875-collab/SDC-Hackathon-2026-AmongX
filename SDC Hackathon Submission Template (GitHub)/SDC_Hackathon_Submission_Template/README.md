@@ -185,7 +185,7 @@ This would allow Orbyte to work directly with existing business data instead of 
 
 | Name            | Role                    | GitHub                                                        |
 | --------------- | ----------------------- | ------------------------------------------------------------- |
-| Soh Zheng Hao   | Leader and Backend      | [@szh6875-collab](https://github.com/szh6875-collab)          |
+| Soh Zheng Hao   | Leader, AI and Backend  | [@szh6875-collab](https://github.com/szh6875-collab)          |
 | Lau Wei Zhe     | AI, Frontend and Slides | [@lausteady68-hue](https://github.com/lausteady68-hue)        |
 | Wong Shun Bing  | AI, Replit and Backend  | [@beeengs · bing](https://github.com/beeengs)                 |
 | Zhang Yuan Ming | AI and Backend          | [[@3195635953-cmd](https://github.com/3195635953-cmd)         |
