@@ -143,7 +143,7 @@ python -m unittest discover tests
 
 ---
 
-## How We Use Replit *(Required)* (Zheng Hao Haven't)
+## How We Use Replit *(Required)* (Done)
 
 Soh Zheng Hao:
 - **:** 
