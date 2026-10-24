@@ -196,10 +196,10 @@ This would allow Orbyte to work directly with existing business data instead of 
 
 - [DONE] AmongX, domain (Domain 1 / Domain 2) and SDG track filled in
 - [DONE] Slide deck link added
-- [ ] Demo video link added
-- [ ] Replit used, with proof of use in `submission/`
-- [ ] RunPod used, with proof of use in `submission/`
-- [ ] Submission template completed in `submission/`
+- [] Demo video link added
+- [DONE] Replit used, with proof of use in `submission/`
+- [DONE] RunPod used, with proof of use in `submission/`
+- [DONE] Submission template completed in `submission/`
 - [ ] "How to Run" steps verified
 - [ ] No API keys or secrets committed to the repository
 
