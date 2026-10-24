@@ -174,9 +174,7 @@ curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
 
 ---
 
-## Challenges & Learnings
-
-## Challenges & Learnings
+## Challenges & Learnings (DONE)
 
 - **Remote teamwork across universities:** Our team members study at different universities, so communication was less efficient than working in one place. Different university timetables made it hard to find a common time for meetings.
 - **Progress tracking:** With no shared place to see who was doing what, it was hard to know the team's progress. We split the work by role (Backend, Frontend, Data & Pitch), agreed on one API contract (route and field names), and saved our work to GitHub at the end of each session.
@@ -190,14 +188,14 @@ curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
 - [ ] Improvement 1
 - [ ] Improvement 2
 
-## Team
+## Team (Done)
 
 | Name            | Role                    | GitHub                                                        |
 | --------------- | ----------------------- | ------------------------------------------------------------- |
 | Soh Zheng Hao   | Leader and Backend      | [@szh6875-collab](https://github.com/szh6875-collab)          |
 | Lau Wei Zhe     | AI, Frontend and Slides | [@lausteady68-hue](https://github.com/lausteady68-hue)        |
 | Wong Shun Bing  | AI, Replit and Backend  | [@beeengs · bing](https://github.com/beeengs)                 |
-| Zhang Yuan Ming | AI and Backend          | [@username](https://github.com/username)                      |
+| Zhang Yuan Ming | AI and Backend          | [[@3195635953-cmd](https://github.com/3195635953-cmd)         |
 | Lee Wei Yeng    | AI, Frontend ans Slides | [[@lee154897-creator](https://github.com/lee154897-creator)   |
 
 ---
