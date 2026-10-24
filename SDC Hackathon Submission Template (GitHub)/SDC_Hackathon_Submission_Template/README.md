@@ -24,7 +24,7 @@
 | Live Demo         | https://orbyte-zip.replit.app/app                                  |
 | RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id                         |
 | Slide Deck        | https://gamma.app/docs/A-safer-way-to-get-e-invoices-ready-7nw2r6dvxsfd36p?mode=doc|
-| Demo Video        | https://example.com/demo-video                                    |
+| Demo Video        | https://youtu.be/fTDp3WtFyfY?si=K1u4tGq1SLu3Lym0                                  |
 
 ---
 
@@ -196,12 +196,12 @@ This would allow Orbyte to work directly with existing business data instead of 
 
 - [DONE] AmongX, domain (Domain 1 / Domain 2) and SDG track filled in
 - [DONE] Slide deck link added
-- [] Demo video link added
+- [DONE] Demo video link added
 - [DONE] Replit used, with proof of use in `submission/`
 - [DONE] RunPod used, with proof of use in `submission/`
 - [DONE] Submission template completed in `submission/`
 - [ ] "How to Run" steps verified
-- [ ] No API keys or secrets committed to the repository
+- [DONE] No API keys or secrets committed to the repository
 
 ## License
 
