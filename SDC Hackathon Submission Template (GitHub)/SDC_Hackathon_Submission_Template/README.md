@@ -12,7 +12,7 @@
 | **Team Domain**        | Domain 2 — Orbyte Smart SME Challenge: Less Busywork, Better Business (Alpha Red Solutions) |
 | **SDG Track (1–17)**   | SDG 8 — Decent Work and Economic Growth (relevant: SDG 9) |
 | **Team Leader**        | Soh Zheng Hao                               |
-| **University**         | HELP University                             |
+| **University**         | HELP University and University Malaya       |
 | **Number of Members**  | 4                                           |
 
 ## Links
