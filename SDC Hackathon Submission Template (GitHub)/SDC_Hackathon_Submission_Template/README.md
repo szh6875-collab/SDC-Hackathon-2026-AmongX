@@ -38,12 +38,12 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 
 ### Key Features (Add if have extra)
 
-**WhatsApp automation** — Reads a chat message, extracts amount and TIN, and shows green / yellow / red rule checks with the source rule.
-**Policy Checker** — Syncs a new rule pack, shows a diff, and applies it only after Owner approval. Each rule carries a clause, source and verified flag.
-**Human in Control** — Clerks see masked TINs and a locked Approve button; Owners approve.
-**Tamper-evident audit log** — SHA-256 hash chain with a Verify button that detects edits.
-**AI with fallback** — RunPod-hosted model for extraction, with a regex extractor if the AI service is slow or offline.
-**Blueprints** — Exempt Shield, Smart Consolidator and 72-Hour SLA Chaser.
+- **WhatsApp automation** — Reads a chat message, extracts amount and TIN, and shows green / yellow / red rule checks with the source rule.
+- **Policy Checker** — Syncs a new rule pack, shows a diff, and applies it only after Owner approval. Each rule carries a clause, source and verified flag.
+- **Human in Control** — Clerks see masked TINs and a locked Approve button; Owners approve.
+- **Tamper-evident audit log** — SHA-256 hash chain with a Verify button that detects edits.
+- **AI with fallback** — RunPod-hosted model for extraction, with a regex extractor if the AI service is slow or offline.
+- **Blueprints** — Exempt Shield, Smart Consolidator and 72-Hour SLA Chaser.
 
 ### Tech Stack (HAVEN'T DONE)
 
@@ -154,10 +154,10 @@ Lee Wei Yeng:
 📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](https://drive.google.com/file/d/1c7mcnP-Hnb7Ty2PdNukc-AhvTb3ow1oJ/view?usp=drivesdk)
 
 Wong Shun Bing:
-**Hosting the Orbyte Hub project:** running the combined Orbyte Hub backend (e-Invoice processing, policy monitoring, audit ledger API) and the Orbyte InvoisReady frontend as a single web app in the cloud. 
-**Development and testing:** importing the project, running it in Replit's preview, and checking the login, invoice submission, approval and audit-verification flows on a live URL. 
-**AI-assisted development (Replit Agent):** Replit Agent usage accounts for US$ 5.17 of the period's spend. 
-**Planned deployment:** publishing the app on a public replit.app link so the project can be demonstrated and shared.
+- **Hosting the Orbyte Hub project:** running the combined Orbyte Hub backend (e-Invoice processing, policy monitoring, audit ledger API) and the Orbyte InvoisReady frontend as a single web app in the cloud. 
+- **Development and testing:** importing the project, running it in Replit's preview, and checking the login, invoice submission, approval and audit-verification flows on a live URL. 
+- **AI-assisted development (Replit Agent):** Replit Agent usage accounts for US$ 5.17 of the period's spend. 
+- **Planned deployment:** publishing the app on a public replit.app link so the project can be demonstrated and shared.
 📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](https://drive.google.com/file/d/12EDeSUvIXtx8IHlPoMhxV8DHos_F3kpd/view?usp=drive_link)
 
 ---
