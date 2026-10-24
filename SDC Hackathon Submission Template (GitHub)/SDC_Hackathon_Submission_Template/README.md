@@ -195,7 +195,7 @@ This would allow Orbyte to work directly with existing business data instead of 
 ## Submission Checklist
 
 - [DONE] AmongX, domain (Domain 1 / Domain 2) and SDG track filled in
-- [ ] Slide deck link added
+- [DONE] Slide deck link added
 - [ ] Demo video link added
 - [ ] Replit used, with proof of use in `submission/`
 - [ ] RunPod used, with proof of use in `submission/`
