@@ -143,34 +143,22 @@ python -m unittest discover tests
 
 ---
 
-## How We Use Replit *(Required)*
+## How We Use Replit *(Required)* (Zheng Hao Haven't)
 
-Describe how your team used Replit. For example:
+Soh Zheng Hao:
+- **:** 
+📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`]
 
-- **Development:** Collaborative coding in a shared Repl using Multiplayer.
-- **Hosting:** The app is deployed with Replit Deployments at the Live Demo link above.
-- **Secrets:** API keys are stored in Replit Secrets, never in the code.
+Lee Wei Yeng:
+- **Development:** I use Replit’s edit and optimise code for our hackathon project. I use them to improve the HTML, CSS, and JavaScript, refine the website layout and test the prototype.
+📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](https://drive.google.com/file/d/1c7mcnP-Hnb7Ty2PdNukc-AhvTb3ow1oJ/view?usp=drivesdk)
 
-📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](submission/REPLIT%20PROOF%20OF%20USE.pdf)
-
-## How We Use RunPod *(Required)*
-
-Describe how your team used RunPod. For example:
-
-- **Workload:** Model inference (e.g. text generation, image processing) runs on a RunPod GPU.
-- **Setup:** `runpod/handler.py` is deployed as a **RunPod Serverless Endpoint**.
-- **Integration:** The Replit app sends requests to the endpoint using `RUNPOD_API_KEY` and `RUNPOD_ENDPOINT_ID`.
-
-Example request:
-
-```bash
-curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
-  -H "Authorization: Bearer $RUNPOD_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"input": {"prompt": "Hello"}}'
-```
-
-📄 Proof of use: [`submission/RUNPOD PROOF OF USE.pdf`](submission/RUNPOD%20PROOF%20OF%20USE.pdf)
+Wong Shun Bing:
+**Hosting the Orbyte Hub project:** running the combined Orbyte Hub backend (e-Invoice processing, policy monitoring, audit ledger API) and the Orbyte InvoisReady frontend as a single web app in the cloud. 
+**Development and testing:** importing the project, running it in Replit's preview, and checking the login, invoice submission, approval and audit-verification flows on a live URL. 
+**AI-assisted development (Replit Agent):** Replit Agent usage accounts for US$ 5.17 of the period's spend. 
+**Planned deployment:** publishing the app on a public replit.app link so the project can be demonstrated and shared.
+📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](https://drive.google.com/file/d/12EDeSUvIXtx8IHlPoMhxV8DHos_F3kpd/view?usp=drive_link)
 
 ---
 
