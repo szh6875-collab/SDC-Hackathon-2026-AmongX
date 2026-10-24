@@ -1,0 +1,59 @@
+ORBYTE HUB E-INVOICE DEMO
+Document Type: Invoice
+Invoice No: INV-2026-00125
+Invoice Date: 2026-10-21
+Currency: MYR
+
+SUPPLIER
+Name: ORBYTE DEMO SUPPLIER SDN. BHD.
+TIN: C1234567890
+BRN: 202601234567
+SST: W10-1234-56789012
+Address: 12 Jalan Demo, 43000 Kajang, Selangor, Malaysia
+Email: billing@demo-supplier.my
+Phone: +603-8888-1234
+
+BUYER
+Name: ORBYTE DEMO BUYER SDN. BHD.
+TIN: C9876543210
+BRN: 202609876543
+Address: 10 Jalan SME, 40000 Shah Alam, Selangor, Malaysia
+Email: accounts@demo-buyer.my
+
+ITEM 1
+Classification: 010
+Description: Cloud Accounting Subscription
+Qty: 1 month
+Unit Price: MYR 350.00
+Discount: MYR 0.00
+Tax Rate: 8%
+Tax Amount: MYR 28.00
+Amount: MYR 350.00
+
+ITEM 2
+Classification: 010
+Description: Compliance Review Service
+Qty: 2 service
+Unit Price: MYR 450.00
+Discount: MYR 0.00
+Tax Rate: 8%
+Tax Amount: MYR 72.00
+Amount: MYR 900.00
+
+TOTALS
+Subtotal: MYR 1,250.00
+Discount: MYR 0.00
+Taxable Amount: MYR 1,250.00
+Tax Amount: MYR 100.00
+Rounding: MYR 0.00
+Total Payable: MYR 1,350.00
+
+PAYMENT
+Mode: Bank Transfer
+Terms: 30 days
+
+VALIDATION
+UUID: DEMO-INV-2026-00125
+Status: DEMO
+
+This is a synthetic test QR. NOT an official LHDN/MyInvois QR.

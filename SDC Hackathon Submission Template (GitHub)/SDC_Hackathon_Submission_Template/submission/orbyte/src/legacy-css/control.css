@@ -1,0 +1,229 @@
+/* ==========================================================================
+   ORBYTE INVOISREADY - CONTROL CENTER (control.css)
+   Strictly Zero Horizontal Page Scroll | Responsive Table Container
+   ========================================================================== */
+
+.page-wrapper {
+  padding: 2rem 0 4.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.page-intro {
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.page-title {
+  margin-bottom: 0.25rem;
+  color: var(--text-headline);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 720px;
+  color: var(--text-body);
+}
+
+/* KPI Stat Cards (Fluid Grid, never overflows) */
+.control-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.stat-card {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0px var(--border-color);
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--primary-dark);
+  line-height: 1.15;
+  margin: 0.35rem 0 0.25rem;
+  word-break: break-all;
+}
+
+.stat-meta {
+  font-size: 0.78rem;
+  color: var(--text-body);
+  word-break: break-word;
+}
+
+/* Queue Toolbar & Filters */
+.queue-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--border-color);
+  transition: all 0.1s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: #F8F5EC;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-dark);
+  color: #FFFFFF;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+/* Queue Table Container (STRICT INTERNAL SCROLL, PAGE NEVER SCROLLS HORIZONTALLY) */
+.queue-table-container {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0px var(--border-color);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* Scroll only inside table container */
+  overflow-y: auto;
+  max-height: 440px;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.queue-table {
+  width: 100%;
+  min-width: 760px; /* Table content scrolls safely inside container */
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.queue-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #F4EEDF;
+  border-bottom: 2px solid var(--border-color);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-headline);
+  white-space: nowrap;
+}
+
+.queue-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #ECE7D9;
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+.queue-table tr:hover td {
+  background-color: #FAF8F2;
+}
+
+.queue-table tr:last-child td {
+  border-bottom: none;
+}
+
+.table-id-cell {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+.table-time-cell {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.table-amount-cell {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-headline);
+  white-space: nowrap;
+}
+
+/* Audit Log Terminal */
+.audit-log-terminal {
+  background-color: #172B25;
+  color: #E2ECE8;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.log-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.log-row.success { color: #6EE7B7; }
+.log-time { color: #8EAAA1; }
+.log-event { color: var(--accent-gold); font-weight: 700; }

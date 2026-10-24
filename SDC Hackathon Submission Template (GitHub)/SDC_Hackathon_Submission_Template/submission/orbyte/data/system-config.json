@@ -1,0 +1,21 @@
+{
+  "SUPABASE_URL": "",
+  "SUPABASE_SECRET_KEY": "",
+  "GEMINI_API_KEY": "",
+  "GEMINI_API_KEYS": "",
+  "OPENAI_API_KEY": "",
+  "OPENAI_API_KEYS": "",
+  "AI_PROVIDER_ORDER": "gemini,openai",
+  "POLICY_QA_PROVIDER_ORDER": "gemini,openai",
+  "AI_GEMINI_MODEL": "gemini-3.8-flash",
+  "POLICY_QA_GEMINI_MODEL": "gemini-3.8-flash",
+  "lastUpdated": "2026-10-24T18:08:00.000Z",
+  "preservedKeys": [
+    "SUPABASE_URL",
+    "SUPABASE_SECRET_KEY",
+    "GEMINI_API_KEY",
+    "GEMINI_API_KEYS",
+    "OPENAI_API_KEY",
+    "OPENAI_API_KEYS"
+  ]
+}

@@ -1,0 +1,354 @@
+/* ==========================================================================
+   ORBYTE INVOISREADY - INVOICE CHECKER (invoice.css)
+   Tab 1: WhatsApp chat simulator + result card
+   ========================================================================== */
+
+.page-wrapper {
+  padding: 3rem 0 5rem;
+}
+
+.page-intro {
+  margin-bottom: 2.75rem;
+}
+
+.page-title {
+  margin-bottom: 0.25rem;
+  color: var(--text-headline);
+}
+
+.page-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 680px;
+  color: var(--text-body);
+}
+
+/* 2-Column Responsive Workspace */
+.invoice-workspace {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: WhatsApp Chat Simulator
+   -------------------------------------------------------------------------- */
+.chat-panel {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat-header {
+  background: var(--primary-dark);
+  color: #FFFFFF;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.chat-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-gold);
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--primary-dark);
+}
+
+.contact-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #FFFFFF;
+}
+
+.contact-status {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: #C1E1D7;
+}
+
+.contact-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #25D366; /* WhatsApp green */
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+}
+
+.chat-badge-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #FFFFFF;
+}
+
+/* Quick Chips */
+.chat-quick-chips {
+  background: #F4EEDF;
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.chip-btn {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 1px 1px 0px var(--border-color);
+  transition: all 0.1s ease;
+}
+
+.chip-btn:hover {
+  background: var(--accent-gold-light);
+  transform: translateY(-1px);
+}
+
+/* Messages Container */
+.chat-messages {
+  flex-grow: 1;
+  padding: 1.25rem;
+  background-color: #ECE7DC;
+  background-image: radial-gradient(#D5CEC0 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  border: 1.5px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  word-break: break-word;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background-color: #FFFFFF;
+  color: var(--text-headline);
+  border-bottom-left-radius: 1px;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background-color: #E2F4E9;
+  color: var(--primary-dark);
+  border-bottom-right-radius: 1px;
+}
+
+.chat-time {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+}
+
+/* Chat Input Bar */
+.chat-input-bar {
+  padding: 0.85rem 1rem;
+  background: #FFFFFF;
+  border-top: 2px solid var(--border-color);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.chat-input {
+  flex-grow: 1;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  background-color: #FAF8F2;
+  color: var(--text-headline);
+  resize: none;
+  min-height: 42px;
+  max-height: 140px;
+  line-height: 1.45;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.chat-input:focus {
+  outline: none;
+  background-color: #FFFFFF;
+  border-color: var(--primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: Result Card (Tactile Paper Dossier)
+   -------------------------------------------------------------------------- */
+.result-card-container {
+  position: relative;
+  padding-top: 14px;
+}
+
+.result-card-inner {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 7px 7px 0px var(--border-color);
+  padding: 1.5rem 1.5rem 1.25rem;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Header Meta Bar */
+.result-card-inner .card-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-headline);
+  border-bottom: 1.5px solid #EFEAE0;
+  padding-bottom: 0.5rem;
+}
+
+.result-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Checklist Items */
+.result-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.25rem 0 1.75rem;
+  background: #FAF7EF;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.result-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 1px 1px 0px var(--border-color);
+}
+
+.check-box.checked {
+  background-color: #D4EDDA;
+  color: #155724;
+}
+
+.check-box.warning {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.check-box.error {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
+
+.check-subtext {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Card Action Buttons */
+.result-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Card Caption Footer */
+.result-card-inner .card-caption {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.result-card-inner .caption-diamond {
+  color: var(--accent-gold);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .invoice-workspace {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

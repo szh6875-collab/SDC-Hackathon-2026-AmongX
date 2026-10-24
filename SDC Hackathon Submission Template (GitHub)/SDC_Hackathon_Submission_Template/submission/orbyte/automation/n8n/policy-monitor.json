@@ -1,0 +1,93 @@
+{
+  "name": "Orbyte Policy Monitor - Supabase PDF + FAQ Snapshots",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "id": "8f324660-f38f-4d48-9e57-3e09a67a0001",
+      "name": "Every 12 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 260]
+    },
+    {
+      "parameters": {},
+      "id": "8f324660-f38f-4d48-9e57-3e09a67a0002",
+      "name": "Manual Test Run",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 440]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://YOUR_ORBYTE_HOST/api/automation/policy-monitor/run",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": []
+        },
+        "options": {
+          "timeout": 120000,
+          "response": {
+            "response": {
+              "neverError": false
+            }
+          }
+        }
+      },
+      "id": "8f324660-f38f-4d48-9e57-3e09a67a0003",
+      "name": "Run Official LHDN PDFs + FAQ Snapshot Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [560, 350],
+      "notesInFlow": true,
+      "notes": "After import: replace YOUR_ORBYTE_HOST with the deployed backend host. Create/select an HTTP Header Auth credential whose header name is x-orbyte-automation-secret and whose value exactly matches ORBYTE_AUTOMATION_SECRET on the Orbyte server. The key is intentionally not embedded in this workflow export."
+    }
+  ],
+  "connections": {
+    "Every 12 Hours": {
+      "main": [
+        [
+          {
+            "node": "Run Official LHDN PDFs + FAQ Snapshot Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Test Run": {
+      "main": [
+        [
+          {
+            "node": "Run Official LHDN PDFs + FAQ Snapshot Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kuala_Lumpur",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  },
+  "versionId": "8f324660-f38f-4d48-9e57-3e09a67a0004",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

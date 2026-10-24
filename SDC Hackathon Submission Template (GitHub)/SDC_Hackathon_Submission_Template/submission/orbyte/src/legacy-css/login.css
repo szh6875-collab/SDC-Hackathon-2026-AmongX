@@ -1,0 +1,369 @@
+/* ==========================================================================
+   ORBYTE INVOISREADY - RBAC LOGIN GATEWAY STYLING (login.css)
+   100% Visual Alignment with index.html Design System (Warm Linen / Neo-Brutalist)
+   ========================================================================== */
+
+body.rbac-page-body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-cream-background);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: 
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Main Container */
+.rbac-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.2rem 1.5rem 3.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header Section */
+.rbac-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.rbac-header .tag-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.rbac-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  color: var(--text-headline);
+  margin: 0.4rem 0 0.65rem;
+  line-height: 1.15;
+}
+
+.rbac-subtitle {
+  color: var(--color-navy-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 3 Role Cards Grid */
+.rbac-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.rbac-card {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0px var(--border-color);
+  padding: 1.35rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  position: relative;
+  user-select: none;
+}
+
+.rbac-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+.rbac-card.selected {
+  background: #FFFDF8;
+  border: 2.5px solid var(--color-forest);
+  box-shadow: 6px 6px 0px var(--color-forest);
+  transform: translate(-2px, -2px);
+}
+
+/* Card Top Row */
+.rbac-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.85rem;
+}
+
+.rbac-icon-badge {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.rbac-icon-badge.icon-owner {
+  background: var(--accent-gold-light);
+}
+
+.rbac-icon-badge.icon-clerk {
+  background: var(--color-mint-light);
+}
+
+.rbac-icon-badge.icon-advisor {
+  background: #F3E8FF;
+}
+
+/* Radio / Checkmark Indicator */
+.rbac-radio-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  transition: all 0.15s ease;
+}
+
+.rbac-check-dot {
+  display: none;
+  font-size: 13px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.rbac-card.selected .rbac-radio-circle {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.rbac-card.selected .rbac-check-dot {
+  display: block;
+}
+
+/* Card Body */
+.rbac-card-body {
+  flex: 1;
+}
+
+.rbac-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-headline);
+  letter-spacing: -0.01em;
+}
+
+.rbac-user-name {
+  margin: 3px 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+.rbac-card-desc {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--color-navy-muted);
+  line-height: 1.45;
+}
+
+/* Card Bottom Tag Badge */
+.rbac-tag-pill {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border-color);
+  border-radius: 2px;
+  box-shadow: 1.5px 1.5px 0px var(--border-color);
+}
+
+.rbac-tag-pill.tag-owner {
+  background: var(--color-gold);
+  color: var(--text-headline);
+}
+
+.rbac-tag-pill.tag-clerk {
+  background: var(--color-mint);
+  color: var(--text-headline);
+}
+
+.rbac-tag-pill.tag-advisor {
+  background: #EAE6F8;
+  color: #3B2A6B;
+}
+
+/* Password Form Box (Neo-card) */
+.rbac-form-card {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0px var(--border-color);
+  padding: 1.5rem;
+}
+
+.rbac-form-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rbac-pass-label {
+  font-weight: 700;
+  color: var(--text-headline);
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-demo-link {
+  background: var(--color-mint-light);
+  border: 1.5px solid var(--color-forest);
+  color: var(--color-forest);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0px var(--border-color);
+  transition: all 0.15s ease;
+}
+
+.btn-demo-link:hover {
+  background: var(--color-forest);
+  color: #FFFFFF;
+  transform: translate(1px, 1px);
+  box-shadow: 0.5px 0.5px 0px var(--border-color);
+}
+
+/* Input Wrap */
+.rbac-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.rbac-input {
+  width: 100%;
+  padding: 12px 44px 12px 14px;
+  background: #FAF5E8;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--border-color);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-headline);
+  font-weight: 600;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.rbac-input:focus {
+  background: #FFFFFF;
+  border-color: var(--color-forest);
+  box-shadow: 3px 3px 0px var(--color-forest);
+}
+
+.rbac-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--color-navy-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.rbac-eye-btn:hover {
+  color: var(--text-headline);
+}
+
+/* Error Banner (Red Neo-brutalist alert) */
+.rbac-error-banner {
+  margin-top: 0.85rem;
+  padding: 10px 14px;
+  border: 2px solid var(--color-crimson, #B33927);
+  background: #FDF2F2;
+  color: #991B1B;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--color-crimson, #B33927);
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: rbacFade 0.2s ease-out;
+}
+
+/* Action Button */
+.rbac-submit-btn {
+  width: 100%;
+  margin-top: 1.15rem;
+  padding: 14px;
+  font-size: 1.05rem;
+  justify-content: center;
+}
+
+/* Hints footer */
+.rbac-hint-footer {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-navy-muted);
+}
+
+.rbac-code {
+  background: var(--color-cream-dark);
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-forest);
+}
+
+@keyframes rbacFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 860px) {
+  .rbac-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .rbac-card {
+    min-height: auto;
+  }
+  .rbac-title {
+    font-size: 1.85rem;
+  }
+}

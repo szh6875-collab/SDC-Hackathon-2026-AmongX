@@ -1,0 +1,8 @@
+{
+  "name": "Orbyte InvoisReady",
+  "description": "Comprehensive Malaysian SME e-Invoice and statutory tax compliance hub with verified guidance and evidence-aware checks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

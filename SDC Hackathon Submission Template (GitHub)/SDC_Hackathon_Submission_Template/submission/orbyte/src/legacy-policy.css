@@ -1,0 +1,281 @@
+/* ==========================================================================
+   ORBYTE INVOISREADY - POLICY PRE-CHECK (policy.css)
+   Tab 2: rules, Sync, diff, Approve update
+   ========================================================================== */
+
+.page-wrapper {
+  padding: 3rem 0 5rem;
+}
+
+.page-intro {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  margin-bottom: 0.25rem;
+  color: var(--text-headline);
+}
+
+.page-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  max-width: 720px;
+  color: var(--text-body);
+}
+
+/* Policy Topbar & Sync Controls */
+.policy-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 2rem;
+  gap: 0.85rem;
+  flex-wrap: nowrap; /* Strictly 1 row on desktop for both BI and BM */
+}
+
+.sync-status {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-headline);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sync-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-teal, #337365);
+  box-shadow: 0 0 0 3px rgba(51, 115, 101, 0.25);
+  animation: pulse-ring 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.code-pill {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  background-color: #F4EEDF;
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-left: 2px;
+}
+
+.code-pill.candidate {
+  background-color: var(--accent-gold-light, #FEF3C7);
+}
+
+.policy-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.policy-topbar-actions .btn-sm {
+  padding: 7px 12px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+/* Interactive Eligibility Tool */
+.eligibility-box {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.eligibility-controls {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.control-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-headline);
+}
+
+.input-with-prefix {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: #FAF8F2;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.input-prefix {
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  background: #EAE3D2;
+  border-right: 1.5px solid var(--border-color);
+}
+
+.text-input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.text-input:focus {
+  outline: none;
+  background: #FFFFFF;
+}
+
+.eligibility-result {
+  background: #FAF7EF;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+}
+
+/* Diff Comparison Grid */
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.diff-box {
+  background: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.diff-box.candidate-box {
+  border-color: var(--primary-dark);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+.diff-box-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 2px dashed #E5DFD1;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.diff-title {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.diff-metrics {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.metric-chip {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: #FAF6ED;
+  border: 1.5px solid var(--border-color);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.metric-chip.highlight {
+  background: var(--accent-gold-light);
+}
+
+/* Code Diff Content */
+.diff-content {
+  background: #172B25;
+  color: #E2ECE8;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  flex-grow: 1;
+}
+
+.diff-removed {
+  background-color: rgba(239, 68, 68, 0.25);
+  color: #FCA5A5;
+  display: block;
+  text-decoration: line-through;
+}
+
+.diff-added {
+  background-color: rgba(16, 185, 129, 0.28);
+  color: #6EE7B7;
+  font-weight: 700;
+  padding: 1px 4px;
+}
+
+@media (max-width: 960px) {
+  .policy-topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .sync-status {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .policy-topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eligibility-controls {
+    grid-template-columns: 1fr;
+  }
+}

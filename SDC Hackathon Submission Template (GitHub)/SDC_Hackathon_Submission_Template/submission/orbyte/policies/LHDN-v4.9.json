@@ -1,0 +1,112 @@
+{
+  "version": "LHDN-Specific-Guideline-v4.9",
+  "label": "LHDN Specific e-Invoice Guideline v4.9",
+  "publishedOn": "2026-09-07",
+  "effectiveFrom": null,
+  "sourceUrl": "https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/",
+  "status": "reference_fixture_not_automatically_active",
+  "notes": "Dates reflect the LHDN official guideline listing. This fixture is not a live-synced legal rules engine; verify source, version, effective date and legal applicability before using it for compliance decisions. This fixture uses RM3,000,000 as the currently published headline turnover reference for e-Invoice exemption screening; it does not make an automatic eligibility determination.",
+  "rules": [
+    {
+      "id": "EINV-000",
+      "category": "e-invoice",
+      "title": "e-Invoice exemption screening reference",
+      "summary": "LHDN's published implementation timeline lists taxpayers with annual turnover or revenue below RM3,000,000 as exempt from e-Invoice implementation. Verify the relevant turnover year, entity/ownership conditions, related-entity exceptions, and other applicable criteria against current official guidance before determining eligibility.",
+      "params": {
+        "turnoverReference": 3000000,
+        "warnAtPct": 0.8,
+        "relatedEntityReviewRequired": true
+      },
+      "reference": "LHDN official implementation timeline and Specific Guideline v4.9; verify applicability against the current official source.",
+      "status": "screening_only"
+    },
+    {
+      "id": "EINV-001",
+      "category": "e-invoice",
+      "title": "RM10,000 transaction/consolidation review threshold",
+      "summary": "A RM10,000 threshold appears in specific e-Invoice/consolidation guidance contexts. It must not be applied as a universal legal mandate without checking the current specific guideline and transaction type.",
+      "params": {
+        "reviewThreshold": 10000,
+        "universalMandate": false
+      },
+      "reference": "Check Specific Guideline v4.9 and other applicable official provisions for the transaction type.",
+      "status": "review_required"
+    },
+    {
+      "id": "EINV-002",
+      "category": "e-invoice",
+      "title": "Buyer TIN field validation",
+      "summary": "Check buyer TIN requirements against the current official guideline, transaction type and any applicable exceptions before deciding whether an invoice may be issued or consolidated.",
+      "params": {
+        "requiresRuleContext": true
+      },
+      "reference": "LHDN General and Specific e-Invoice Guidelines; applicability must be verified.",
+      "status": "review_required"
+    },
+    {
+      "id": "EINV-003",
+      "category": "e-invoice",
+      "title": "Human review for uncertain extraction",
+      "summary": "If the AI or built-in reader confidence is below 90%, require a person to review the extracted fields before approval. This is an Orbyte product safeguard, not a claim about a government-mandated confidence threshold.",
+      "params": {
+        "minConfidence": 0.9
+      },
+      "reference": "Orbyte Human-in-the-Loop Governance; product control.",
+      "status": "active_product_control"
+    },
+    {
+      "id": "B27-R1",
+      "category": "budget2027",
+      "title": "Budget 2027 corporate tax rate announcement scenario",
+      "summary": "Budget 2027 announced proposed preferential tax-rate changes. This fixture is a scenario only and must not be presented as enacted or in-force law without confirmation from the relevant Act, gazette, effective date and eligibility conditions.",
+      "params": {
+        "maxSales": 50000000,
+        "maxCapital": 2500000,
+        "firstBand": 150000,
+        "announcedTier1Rate": 0.14,
+        "announcedTier2Rate": 0.16
+      },
+      "reference": "MOF Budget 2027 speech; verify formal enactment and effective date.",
+      "status": "announcement_pending_confirmation"
+    },
+    {
+      "id": "B27-R2",
+      "category": "budget2027",
+      "title": "Budget 2027 minimum-wage announcement scenario",
+      "summary": "Budget 2027 announced a minimum-wage measure with an intended future effective date. Do not calculate guaranteed payroll savings or state an exemption until final official rules and eligibility conditions have been verified.",
+      "params": {
+        "announcedNewMinimumWage": 2000,
+        "announcedSMEReference": 50000000,
+        "announcedEffectiveDate": "2027-06-01"
+      },
+      "reference": "MOF Budget 2027 speech; verify formal rules and effective date.",
+      "status": "announcement_pending_confirmation"
+    },
+    {
+      "id": "B27-R3",
+      "category": "budget2027",
+      "title": "MediAsas first-year premium subsidy announcement",
+      "summary": "Budget 2027 announced a first-year premium subsidy of RM200 per eligible employee for SMEs with fewer than 75 employees, capped at 50 employees per company (maximum RM10,000). This is an announcement, not confirmed entitlement; verify the final programme rules and launch details.",
+      "params": {
+        "maxStaffExclusive": 75,
+        "maxSubsidizedEmployees": 50,
+        "subsidyPerEmployee": 200,
+        "maxIndicativeSubsidy": 10000,
+        "expectedStart": "2027-01-01"
+      },
+      "reference": "MOF Budget 2027 speech; final programme details and eligibility must be verified.",
+      "status": "announcement_pending_confirmation"
+    },
+    {
+      "id": "EINV-004",
+      "category": "e-invoice",
+      "title": "Cancellation and correction workflow review",
+      "summary": "Cancellation windows and credit-note requirements must be checked against the applicable current Specific e-Invoice Guideline and MyInvois rules; do not hardcode a time window without verified source/version.",
+      "params": {
+        "requiresCurrentGuidelineCheck": true
+      },
+      "reference": "LHDN Specific e-Invoice Guideline v4.9 and MyInvois guidance; verify before use.",
+      "status": "review_required"
+    }
+  ]
+}

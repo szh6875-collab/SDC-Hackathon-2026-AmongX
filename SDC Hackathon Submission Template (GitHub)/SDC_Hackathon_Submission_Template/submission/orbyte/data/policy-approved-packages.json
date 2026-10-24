@@ -1,0 +1,1519 @@
+[
+  {
+    "id": "PKG-LHDN-SST-REFERENCE-1798",
+    "packageName": "QUARANTINED — Royal Malaysian Customs MySST Portal — SST Reference (source/version mismatch)",
+    "version": "unknown",
+    "sourceId": "lhdn-sst-reference",
+    "sourceName": "Royal Malaysian Customs MySST Portal — SST Reference",
+    "sourceUrl": "https://mysst.customs.gov.my/",
+    "sourceSha256": "2ca2ff7033db8301738f54b8981cdab70345d56ed9171a3ccd02b358c197956b",
+    "status": "rejected",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-unknown-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from Royal Malaysian Customs MySST Portal — SST Reference. Transactions exceeding threshold trigger review checklist.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 2ca2ff7033db...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "MySST Skip to content Latest Announcements See all announcements Date Title Link 17/06/2025 Frequently Asked Questions (FAQ) - (FAQ) - Expans...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-unknown-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 2ca2ff7033db...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-unknown-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "unknown",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "Published reference schedule: 15% on the first RM150k, 17% from RM150k to RM600k, and 24% above RM600k; verify the applicable year of assessment.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Reference schedule only. Confirm the applicable year of assessment and statutory eligibility before relying on this rate schedule.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 2ca2ff7033db...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Provide a consistent reference schedule for a clearly labelled comparison."
+      }
+    ],
+    "extractedAt": "2026-10-24T04:29:41.798Z",
+    "validatedAt": "2026-10-24T04:29:41.798Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": "Quarantined: generated from the generic MySST homepage, not a versioned source-specific e-Invoice guideline. Do not activate.",
+    "changeSummary": "Parsed from newly crawled text (24641 characters). SHA-256 digest: 2ca2ff7033db8301...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (2ca2ff7033db8301...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-24T04:29:41.798Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-MOF-BUDGET-1406",
+    "packageName": "MOF Budget 2027 Policy Speech & Announced Measures — Candidate Rule Package (unknown)",
+    "version": "unknown",
+    "sourceId": "mof-budget",
+    "sourceName": "MOF Budget 2027 Policy Speech & Announced Measures",
+    "sourceUrl": "https://www.mof.gov.my/portal/en/news/speech/speech-the-fifth-madani-budget-2027",
+    "sourceSha256": "ee9940fcd0873b6feb39ca130b05797ebfb7f6c384dfc1f32a5f2973b9739df3",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.14
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.16
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-unknown-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from MOF Budget 2027 Policy Speech & Announced Measures. Transactions exceeding threshold trigger review checklist.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest ee9940fcd087...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Speech The Fifth MADANI Budget 2027 Accessibility Tools Invert colors  ...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-unknown-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest ee9940fcd087...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-unknown-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "unknown",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "Budget 2027 announcement scenario: 14% on the first RM150k, 16% from RM150k to RM600k, and 24% above RM600k; not confirmed as active law.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.14
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.16
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Announcement-only scenario detected from the MOF Budget 2027 speech. Legal enactment, effective date, year of assessment and eligibility are not confirmed by text extraction.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest ee9940fcd087...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Stage the announced rate change for human legal review; do not report it as confirmed savings."
+      }
+    ],
+    "extractedAt": "2026-10-24T04:29:41.406Z",
+    "validatedAt": "2026-10-24T04:29:41.406Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": null,
+    "changeSummary": "Parsed from newly crawled text (114067 characters). SHA-256 digest: ee9940fcd0873b6f...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (ee9940fcd0873b6f...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-24T04:29:41.406Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-SPECIFIC-GUIDELINE-0792",
+    "packageName": "LHDN e-Invoice Specific Guideline — Candidate Rule Package (v4.9)",
+    "version": "v4.9",
+    "sourceId": "lhdn-specific-guideline",
+    "sourceName": "LHDN e-Invoice Specific Guideline",
+    "sourceUrl": "https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/",
+    "sourceSha256": "da207df08fda2e48ce4d3ffbc409075643a0f5f5c4ca21c9f6f447553a10bf94",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-v4.9-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "v4.9",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from LHDN e-Invoice Specific Guideline. Transactions exceeding threshold trigger review checklist.",
+        "reference": "LHDN e-Invoice Specific Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "GARIS PANDUAN SPESIFIK E-INVOIS (VERSI 4.9) 1 GARIS PANDUAN SPESIFIK E-INVOIS LEMBAGA HASIL DALAM NEGERI MALAYSIA Garis panduan ini diterbitkan di baw...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-v4.9-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "v4.9",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "LHDN e-Invoice Specific Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-v4.9-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "v4.9",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "Published reference schedule: 15% on the first RM150k, 17% from RM150k to RM600k, and 24% above RM600k; verify the applicable year of assessment.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Reference schedule only. Confirm the applicable year of assessment and statutory eligibility before relying on this rate schedule.",
+        "reference": "LHDN e-Invoice Specific Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Provide a consistent reference schedule for a clearly labelled comparison."
+      }
+    ],
+    "extractedAt": "2026-10-24T04:29:40.792Z",
+    "validatedAt": "2026-10-24T04:29:40.792Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": null,
+    "changeSummary": "Parsed from newly crawled text (172105 characters). SHA-256 digest: da207df08fda2e48...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (da207df08fda2e48...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-24T04:29:40.792Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-GENERAL-GUIDELINE-8981",
+    "packageName": "LHDN e-Invoice General Guideline — Candidate Rule Package (v4.8)",
+    "version": "v4.8",
+    "sourceId": "lhdn-general-guideline",
+    "sourceName": "LHDN e-Invoice General Guideline",
+    "sourceUrl": "https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/",
+    "sourceSha256": "1a03ee891434286728073c11c0ae884ca66eae74897d031612c50f6de211ed2d",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-v4.8-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "v4.8",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from LHDN e-Invoice General Guideline. Transactions exceeding threshold trigger review checklist.",
+        "reference": "LHDN e-Invoice General Guideline",
+        "enabled": true,
+        "source": "Parsed text digest 1a03ee891434...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "GARIS PANDUAN E-INVOIS (VERSI 4.8) 1 GARIS PANDUAN E-INVOIS LEMBAGA HASIL DALAM NEGERI MALAYSIA Garis panduan ini diterbitkan di bawah seksyen 134A Ak...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-v4.8-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "v4.8",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "LHDN e-Invoice General Guideline",
+        "enabled": true,
+        "source": "Parsed text digest 1a03ee891434...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-v4.8-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "v4.8",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "Published reference schedule: 15% on the first RM150k, 17% from RM150k to RM600k, and 24% above RM600k; verify the applicable year of assessment.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Reference schedule only. Confirm the applicable year of assessment and statutory eligibility before relying on this rate schedule.",
+        "reference": "LHDN e-Invoice General Guideline",
+        "enabled": true,
+        "source": "Parsed text digest 1a03ee891434...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Provide a consistent reference schedule for a clearly labelled comparison."
+      }
+    ],
+    "extractedAt": "2026-10-24T04:29:38.981Z",
+    "validatedAt": "2026-10-24T04:29:38.982Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": null,
+    "changeSummary": "Parsed from newly crawled text (77677 characters). SHA-256 digest: 1a03ee8914342867...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (1a03ee8914342867...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-24T04:29:38.982Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-SST-REFERENCE-4998",
+    "packageName": "QUARANTINED — Royal Malaysian Customs MySST Portal — SST Reference (source/version mismatch)",
+    "version": "unknown",
+    "sourceId": "lhdn-sst-reference",
+    "sourceName": "Royal Malaysian Customs MySST Portal — SST Reference",
+    "sourceUrl": "https://mysst.customs.gov.my/",
+    "sourceSha256": "0ea8a4208f804a8ae4038b53bb2d7908791af645431b9cf301f065ca1a892b4a",
+    "status": "rejected",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-unknown-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from Royal Malaysian Customs MySST Portal — SST Reference. Transactions exceeding threshold trigger review checklist.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 0ea8a4208f80...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "MySST Skip to content EN EN MS Exemption About Exemption Schedule A (Old Module) Sign Up: Schedule A Sign Up: Schedule B Sign Up: Schedule C3 &#038; C...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-unknown-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 0ea8a4208f80...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-unknown-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "unknown",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "15% on first RM150k, 17% up to RM600k, 24% standard rate.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Statutory tax rate calculation for resident MSME entities.",
+        "reference": "Royal Malaysian Customs MySST Portal — SST Reference",
+        "enabled": true,
+        "source": "Parsed text digest 0ea8a4208f80...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Maximize annual tax savings up to RM35,500 for qualifying businesses"
+      }
+    ],
+    "extractedAt": "2026-10-23T22:40:24.998Z",
+    "validatedAt": "2026-10-23T22:40:24.998Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": "Quarantined: generated from the generic MySST homepage, not a versioned source-specific e-Invoice guideline. Do not activate.",
+    "changeSummary": "Parsed from newly crawled text (29426 characters). SHA-256 digest: 0ea8a4208f804a8a...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (0ea8a4208f804a8a...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-23T22:40:24.998Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-MOF-BUDGET-4386",
+    "packageName": "MOF Budget 2027 Policy Speech & Announced Measures — Candidate Rule Package (unknown)",
+    "version": "unknown",
+    "sourceId": "mof-budget",
+    "sourceName": "MOF Budget 2027 Policy Speech & Announced Measures",
+    "sourceUrl": "https://www.mof.gov.my/portal/en/news/speech/speech-the-fifth-madani-budget-2027",
+    "sourceSha256": "9544c921a4aa3df70b88ba64b8bf4978e261e995176f257a202bae1ad6f21304",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.14
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.16
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-unknown-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from MOF Budget 2027 Policy Speech & Announced Measures. Transactions exceeding threshold trigger review checklist.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest 9544c921a4aa...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Speech The Fifth MADANI Budget 2027 Accessibility Tools Invert colors Monochrome Dark contrast Light contrast Low saturation High saturation Highlight...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-unknown-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest 9544c921a4aa...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-unknown-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "unknown",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "Budget 2027 announcement scenario: 14% on the first RM150k, 16% from RM150k to RM600k, and 24% above RM600k; not confirmed as active law.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.14
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.16
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Announcement-only scenario detected from the MOF Budget 2027 speech. Legal enactment, effective date, year of assessment and eligibility are not confirmed by text extraction.",
+        "reference": "MOF Budget 2027 Policy Speech & Announced Measures",
+        "enabled": true,
+        "source": "Parsed text digest 9544c921a4aa...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Stage the announced rate change for human legal review; do not report it as confirmed savings."
+      }
+    ],
+    "extractedAt": "2026-10-23T22:40:24.386Z",
+    "validatedAt": "2026-10-23T22:40:24.387Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": "Source is an MOF Budget 2027 speech. Rates are stored as an inactive announcement scenario; formal legislation, effective date, year of assessment and eligibility remain to be verified.",
+    "changeSummary": "Budget 2027 announcement candidate: 14%/16%/24%. Candidate tax rates are for comparison only and do not change central reference calculations.",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (9544c921a4aa3df7...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-23T22:40:24.387Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-FAQ-3727",
+    "packageName": "LHDN e-Invoice FAQs & Official Clarifications — Candidate Rule Package (unknown)",
+    "version": "unknown",
+    "sourceId": "lhdn-faq",
+    "sourceName": "LHDN e-Invoice FAQs & Official Clarifications",
+    "sourceUrl": "https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/soalan-lazim/",
+    "sourceSha256": "cedd6f63688428e22c250a2c05fef0024d91c0921f73e19b33823cc30ac59739",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-unknown-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from LHDN e-Invoice FAQs & Official Clarifications. Transactions exceeding threshold trigger review checklist.",
+        "reference": "LHDN e-Invoice FAQs & Official Clarifications",
+        "enabled": true,
+        "source": "Parsed text digest cedd6f636884...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Soalan Lazim Skip to content 🌐 BM | ENG STR EduZone Tanya HAFY Home e-Invois Rujukan Pelaksanaan e-Invois Soalan Lazim Perkhidmatan Individu Syarikat...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-unknown-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "unknown",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "LHDN e-Invoice FAQs & Official Clarifications",
+        "enabled": true,
+        "source": "Parsed text digest cedd6f636884...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-unknown-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "unknown",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "15% on first RM150k, 17% up to RM600k, 24% standard rate.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Statutory tax rate calculation for resident MSME entities.",
+        "reference": "LHDN e-Invoice FAQs & Official Clarifications",
+        "enabled": true,
+        "source": "Parsed text digest cedd6f636884...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Maximize annual tax savings up to RM35,500 for qualifying businesses"
+      }
+    ],
+    "extractedAt": "2026-10-23T22:40:23.727Z",
+    "validatedAt": "2026-10-23T22:40:23.728Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": null,
+    "changeSummary": "Parsed from newly crawled text (5076 characters). SHA-256 digest: cedd6f63688428e2...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (cedd6f63688428e2...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-23T22:40:23.728Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-SPECIFIC-GUIDELINE-3054",
+    "packageName": "LHDN Specific e-Invoice Guideline — Candidate Rule Package (v4.9)",
+    "version": "v4.9",
+    "sourceId": "lhdn-specific-guideline",
+    "sourceName": "LHDN Specific e-Invoice Guideline",
+    "sourceUrl": "https://www.hasil.gov.my/wp-content/uploads/LHDN-Garis-Panduan-Spesifik-e-Invois.pdf",
+    "sourceSha256": "da207df08fda2e48ce4d3ffbc409075643a0f5f5c4ca21c9f6f447553a10bf94",
+    "status": "validated",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-v4.9-THRESH",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "v4.9",
+        "category": "e-invoicing",
+        "title": "Individual Transaction Review Prompt",
+        "description": "Transaction review control based on latest parsed policy document.",
+        "condition": {
+          "review_threshold": 10000
+        },
+        "explanation": "Extracted from LHDN Specific e-Invoice Guideline. Transactions exceeding threshold trigger review checklist.",
+        "reference": "LHDN Specific e-Invoice Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "GARIS PANDUAN SPESIFIK E-INVOIS (VERSI 4.9) 1 GARIS PANDUAN SPESIFIK E-INVOIS LEMBAGA HASIL DALAM NEGERI MALAYSIA Garis panduan ini diterbitkan di baw...",
+        "confidence": 0.95,
+        "benefit": "Prevent non-compliance penalties on individual e-Invoice issuance"
+      },
+      {
+        "id": "EXEMP-v4.9-RADAR",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "v4.9",
+        "category": "e-invoicing",
+        "title": "MSME Annual Revenue Exemption Radar",
+        "description": "MSME revenue below RM 3,000,000 relaxation screening.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "Screening criteria for relaxed statutory deadline based on LHDN phase implementation schedule.",
+        "reference": "LHDN Specific e-Invoice Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Turnover relaxation threshold identified as RM 3,000,000.",
+        "confidence": 0.98,
+        "benefit": "Avoid unnecessary vendor software overhead before mandatory phase date"
+      },
+      {
+        "id": "TAX-v4.9-BRACKET",
+        "rule_id": "R-MSME-TAX-RATE",
+        "version": "v4.9",
+        "category": "tax",
+        "title": "Preferential SME Corporate Tax Tier Scheme",
+        "description": "15% on first RM150k, 17% up to RM600k, 24% standard rate.",
+        "condition": {
+          "brackets": [
+            {
+              "upTo": 150000,
+              "rate": 0.15
+            },
+            {
+              "upTo": 600000,
+              "rate": 0.17
+            },
+            {
+              "upTo": null,
+              "rate": 0.24
+            }
+          ]
+        },
+        "explanation": "Statutory tax rate calculation for resident MSME entities.",
+        "reference": "LHDN Specific e-Invoice Guideline",
+        "enabled": true,
+        "source": "Parsed text digest da207df08fda...",
+        "status": "awaiting_details",
+        "approved_by": null,
+        "source_sentence": "Preferential corporate tax brackets applicable to eligible SME capital structures.",
+        "confidence": 0.99,
+        "benefit": "Maximize annual tax savings up to RM35,500 for qualifying businesses"
+      }
+    ],
+    "extractedAt": "2026-10-23T22:40:23.054Z",
+    "validatedAt": "2026-10-23T22:40:23.054Z",
+    "approvedAt": null,
+    "approvedBy": null,
+    "approvalNotes": null,
+    "changeSummary": "Parsed from newly crawled text (172105 characters). SHA-256 digest: da207df08fda2e48...",
+    "safetyVerification": {
+      "passed": true,
+      "score": 100,
+      "totalChecks": 7,
+      "passedChecks": 7,
+      "checks": [
+        {
+          "id": "CHK-BRACKET-MONOTONIC",
+          "name": "Tax Bracket Monotonicity Check",
+          "description": "Validates that income tax bracket ceilings are strictly ordered and non-overlapping.",
+          "passed": true,
+          "severity": "critical",
+          "details": "All tax tiers are strictly monotonic and properly terminated."
+        },
+        {
+          "id": "CHK-RATE-BOUNDS",
+          "name": "Statutory Rate Bounds Verification",
+          "description": "Ensures proposed tax rates do not contain negative values or abnormal percentages (> 45%).",
+          "passed": true,
+          "severity": "critical",
+          "details": "All statutory tax rates are within legal 0% to 45% boundaries."
+        },
+        {
+          "id": "CHK-EXEMPTION-SANITY",
+          "name": "e-Invoice Exemption Radar Sanity",
+          "description": "Verifies the MSME exemption threshold against statutory policy guidance (RM 3,000,000 benchmark).",
+          "passed": true,
+          "severity": "critical",
+          "details": "Exemption threshold RM 3,000,000 is within realistic MSME bounds (gazetted target: RM 3,000,000)."
+        },
+        {
+          "id": "CHK-WAGE-BOUNDS",
+          "name": "Minimum Wage Scale Sanity",
+          "description": "Ensures employee wage baseline conforms to National Minimum Wage Order guidelines.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Minimum wage baseline RM 1700 is aligned with national standard order."
+        },
+        {
+          "id": "CHK-SST-RATE",
+          "name": "SST Rate Classification Sanity",
+          "description": "Checks Sales & Service Tax rate parameters against Royal Malaysian Customs standards.",
+          "passed": true,
+          "severity": "warning",
+          "details": "SST classification rate 8.0% is verified."
+        },
+        {
+          "id": "CHK-SOURCE-PROVENANCE",
+          "name": "Source Provenance & Cryptographic Digest",
+          "description": "Confirms cryptographic SHA-256 text fingerprinting and official government domain origin.",
+          "passed": true,
+          "severity": "critical",
+          "details": "Source SHA-256 digest (da207df08fda2e48...) verified against official domain source."
+        },
+        {
+          "id": "CHK-RULE-CONSISTENCY",
+          "name": "Logical Rule Consistency & Disjointness",
+          "description": "Checks that structured rules contain non-conflicting preconditions and distinct IDs.",
+          "passed": true,
+          "severity": "critical",
+          "details": "3 discrete compliance rules validated with unique IDs."
+        }
+      ],
+      "issues": [],
+      "verifiedAt": "2026-10-23T22:40:23.054Z",
+      "engineVersion": "OrbyteSafetyValidator/v2.5"
+    }
+  },
+  {
+    "id": "PKG-LHDN-v4.9-ACTIVE",
+    "packageName": "DEMO ONLY — Reference schedule (not a verified active tax package)",
+    "version": "demo-baseline",
+    "sourceId": "lhdn-specific-guideline",
+    "sourceName": "Local demo fixture — official source not verified",
+    "sourceUrl": "https://www.hasil.gov.my/e-invois/rujukan-pelaksanaan-e-invois/garis-panduan/",
+    "sourceSha256": "",
+    "status": "draft",
+    "isActive": false,
+    "taxBrackets": [
+      {
+        "upTo": 150000,
+        "rate": 0.15
+      },
+      {
+        "upTo": 600000,
+        "rate": 0.17
+      },
+      {
+        "upTo": null,
+        "rate": 0.24
+      }
+    ],
+    "exemptionThreshold": 3000000,
+    "minWageStandard": 1700,
+    "sstRate": 0.08,
+    "rules": [
+      {
+        "id": "EINV-001",
+        "rule_id": "R-INVOICE-THRESHOLD",
+        "version": "1.0",
+        "category": "e-invoicing",
+        "title": "Configured RM10,000 Transaction Review Prompt",
+        "description": "Configured product threshold that prompts a check of applicable transaction and consolidation rules.",
+        "condition": {
+          "review_threshold": 10000,
+          "universal_mandate": false
+        },
+        "explanation": "Flags transactions crossing RM10,000 for mandatory completeness and consolidation review.",
+        "reference": "LHDN Specific Guideline v4.9",
+        "enabled": true,
+        "source": "Verified LHDN v4.9 Rule Package",
+        "status": "in_force",
+        "approved_by": "Chief Tax Compliance Officer",
+        "source_sentence": "Transactions crossing the configured review threshold should be checked against official requirements.",
+        "confidence": 0.95,
+        "benefit": "Prompt users to verify transaction-specific e-Invoice treatment"
+      },
+      {
+        "id": "EINV-002",
+        "rule_id": "R-BUYER-TIN",
+        "version": "1.0",
+        "category": "e-invoicing",
+        "title": "Buyer TIN Field Completeness Check",
+        "description": "Buyer TIN or BRN is required for all non-consolidated B2B e-Invoices.",
+        "condition": {
+          "require_tin_on_individual": true
+        },
+        "explanation": "Buyer Tax Identification Number presence checked prior to submission.",
+        "reference": "LHDN General Guideline v4.8 & Specific Guideline v4.9",
+        "enabled": true,
+        "source": "Verified LHDN v4.9 Rule Package",
+        "status": "in_force",
+        "approved_by": "Chief Tax Compliance Officer",
+        "source_sentence": "Check whether buyer TIN is required for the particular transaction under official guidelines.",
+        "confidence": 0.98,
+        "benefit": "Help users find missing tax-identification fields before submission"
+      },
+      {
+        "id": "EXEMP-001",
+        "rule_id": "R-EXEMPTION-RADAR",
+        "version": "1.0",
+        "category": "e-invoicing",
+        "title": "MSME Annual Turnover Exemption Screening",
+        "description": "Taxpayers with annual turnover or revenue below RM3,000,000 are screened for statutory timeline relaxation.",
+        "condition": {
+          "annual_turnover_max": 3000000
+        },
+        "explanation": "MSME annual revenue below RM3M threshold verified against official implementation schedule.",
+        "reference": "LHDN Official Implementation Timeline 2026",
+        "enabled": true,
+        "source": "Verified LHDN v4.9 Rule Package",
+        "status": "in_force",
+        "approved_by": "Chief Tax Compliance Officer",
+        "source_sentence": "Taxpayers with annual turnover or revenue below RM3,000,000 are exempt from mandatory phase dates.",
+        "confidence": 0.99,
+        "benefit": "Identify MSME phase exemption eligibility and avoid premature compliance expenditure"
+      }
+    ],
+    "safetyVerification": {
+      "passed": false,
+      "score": 0,
+      "totalChecks": 7,
+      "passedChecks": 0,
+      "checks": [],
+      "issues": [
+        "Demo fallback package is not based on a successfully retrieved live official document and has not received human approval."
+      ],
+      "verifiedAt": "",
+      "engineVersion": "NOT VERIFIED — demo fallback only"
+    },
+    "extractedAt": "2026-09-08T00:00:00.000Z",
+    "validatedAt": null,
+    "approvedAt": null,
+    "approvedBy": "Local demo seed (not a human approval)",
+    "approvalNotes": "Synthetic local fallback data. Reference schedule only; not a live official snapshot, legal verification, human approval, or production tax basis.",
+    "changeSummary": "Local reference baseline only. Budget 2027 rates remain an announcement scenario until legal status and applicable year of assessment are verified."
+  }
+]

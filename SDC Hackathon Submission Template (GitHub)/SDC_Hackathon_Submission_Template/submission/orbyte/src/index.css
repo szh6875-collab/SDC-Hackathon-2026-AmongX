@@ -1,0 +1,339 @@
+@import "./legacy-main.css";
+@import "./legacy-home.css";
+@import "./legacy-control.css";
+@import "./legacy-login.css";
+@import "./legacy-about.css";
+@import "./legacy-invoice.css";
+@import "./legacy-policy.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Young Serif", Georgia, serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root {
+  --orbyte-cream: #FAF5E8;
+  --orbyte-grid: #E5DEC9;
+  --orbyte-paper: #FFFFFF;
+  --orbyte-forest-dark: #1C3F35;
+  --orbyte-forest: #285443;
+  --orbyte-gold: #E5A842;
+  --orbyte-body: #4A635B;
+  font-family: var(--font-sans);
+  color: var(--orbyte-forest-dark);
+  background: var(--orbyte-cream);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--orbyte-cream);
+  color: var(--orbyte-forest-dark);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.orbyte-app {
+  font-size: 16.5px;
+}
+
+/* Universal automatic font size elevation across all pages:
+   Prevents unreadable tiny text while preserving frame fit and layout stability */
+.orbyte-app .text-\[9px\],
+.orbyte-app .text-\[10px\],
+.orbyte-app .text-\[11px\],
+.orbyte-app .text-\[12px\] {
+  font-size: 0.8125rem !important; /* ~13.8px */
+  line-height: 1.35rem !important;
+}
+
+.orbyte-app .text-xs {
+  font-size: 0.925rem !important; /* ~15.7px */
+  line-height: 1.45rem !important;
+}
+
+.orbyte-app .text-sm {
+  font-size: 1.05rem !important; /* ~17.8px */
+  line-height: 1.55rem !important;
+}
+
+.orbyte-app .text-base {
+  font-size: 1.15rem !important; /* ~19.5px */
+  line-height: 1.65rem !important;
+}
+
+main h1, main h2, main h3 {
+  font-family: var(--font-serif);
+  color: inherit;
+}
+
+.orbyte-grid-canvas {
+  background-color: var(--orbyte-cream);
+  background-image:
+    linear-gradient(var(--orbyte-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--orbyte-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--orbyte-gold) 85%, white);
+  outline-offset: 2px;
+}
+
+/* =====================================================================
+   ORBYTE LEGACY VISUAL SYSTEM
+   Visual source of truth: Orbyte-InvoisReady legacy frontend.
+   Business logic/data remain owned by the current Hub backend.
+   ===================================================================== */
+
+.orbyte-app {
+  --legacy-border: #1C3F35;
+  --legacy-paper: #FFFFFF;
+  --legacy-cream: #FAF5E8;
+  --legacy-body: #4A635B;
+  --legacy-gold: #E5A842;
+  --legacy-forest: #285443;
+  --legacy-shadow: 4px 4px 0 #1C3F35;
+}
+
+.orbyte-app, .orbyte-app * { font-family: var(--font-body); }
+.orbyte-app h1, .orbyte-app h2, .orbyte-app h3, .orbyte-app h4 { font-family: var(--font-serif); }
+.orbyte-app .font-mono, .orbyte-app code { font-family: var(--font-mono); }
+
+.orbyte-app .rounded-xl,
+.orbyte-app .rounded-2xl,
+.orbyte-app .rounded-lg { border-radius: 4px !important; }
+.orbyte-app .shadow-sm,
+.orbyte-app .shadow-md,
+.orbyte-app .shadow-lg,
+.orbyte-app .shadow-xl,
+.orbyte-app .shadow-2xl { box-shadow: var(--legacy-shadow) !important; }
+.orbyte-app .border-slate-200,
+.orbyte-app .border-slate-300,
+.orbyte-app .border-slate-100 { border-color: var(--legacy-border) !important; }
+.orbyte-app .bg-white { background: #fff !important; }
+.orbyte-app .bg-slate-50 { background: #FAF8F2 !important; }
+.orbyte-app .text-slate-900,
+.orbyte-app .text-slate-800 { color: #1C3F35 !important; }
+.orbyte-app .text-slate-700,
+.orbyte-app .text-slate-600 { color: #4A635B !important; }
+.orbyte-app .text-slate-500,
+.orbyte-app .text-slate-400 { color: #6B857D !important; }
+.orbyte-app button:not(.unstyled) { border-radius: 4px; }
+.orbyte-app input,
+.orbyte-app textarea,
+.orbyte-app select { border-radius: 4px !important; border-width: 2px !important; }
+.orbyte-app table { border-color: var(--legacy-border); }
+.orbyte-app thead { background: #F4EEDF !important; }
+.orbyte-app .bg-\[\#1C3F35\] { background: #1C3F35 !important; }
+.orbyte-app .bg-\[\#285443\] { background: #285443 !important; }
+.orbyte-app .text-\[\#1C3F35\] { color: #1C3F35 !important; }
+
+/* Make the modern React shell visually read as the legacy Orbyte product. */
+.orbyte-app > .flex { background: transparent !important; }
+.orbyte-app main { background: transparent; }
+.orbyte-app .orbyte-grid-canvas { background-color: #FAF5E8; }
+
+/* Legacy-style primary controls. */
+.orbyte-app button.bg-\[\#1C3F35\],
+.orbyte-app button.bg-emerald-600,
+.orbyte-app button.bg-blue-600 { background: #285443 !important; color: #fff !important; border: 2px solid #1C3F35 !important; box-shadow: 3px 3px 0 #1C3F35 !important; }
+.orbyte-app button.bg-\[\#1C3F35\]:hover,
+.orbyte-app button.bg-emerald-600:hover,
+.orbyte-app button.bg-blue-600:hover { background: #19382E !important; transform: translate(-1px,-1px); }
+
+/* Header/sidebar surfaces */
+.orbyte-app header { background: #FAF5E8 !important; border-bottom: 2px solid #1C3F35 !important; box-shadow: none !important; }
+.orbyte-app aside { background: #FAF5E8 !important; border-color: #1C3F35 !important; }
+
+/* Chat surfaces intentionally match the old WhatsApp treatment. */
+.legacy-whatsapp-shell {
+  border: 2px solid #1C3F35;
+  border-radius: 4px;
+  box-shadow: 7px 7px 0 #244D3F;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.legacy-whatsapp-header {
+  background: #1C3F35;
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.legacy-whatsapp-messages {
+  background: #ECE7DC;
+  background-image: radial-gradient(#D5CEC0 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  min-height: 340px;
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  color: #1C3F35;
+  box-sizing: border-box;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+.legacy-whatsapp-bubble {
+  max-width: 88%;
+  padding: 12px 14px;
+  border: 1.5px solid #1C3F35;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #1C3F35;
+  margin-bottom: 14px;
+  line-height: 1.5;
+  font-size: 0.88rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
+}
+@media (min-width: 640px) {
+  .legacy-whatsapp-bubble {
+    max-width: 82%;
+  }
+}
+.legacy-whatsapp-bubble.bot {
+  background: #fff;
+  color: #1C3F35;
+}
+.legacy-whatsapp-bubble.user {
+  background: #E2F4E9;
+  color: #1C3F35;
+  margin-left: auto;
+}
+.legacy-whatsapp-composer {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-top: 2px solid #1C3F35;
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: flex-end;
+}
+
+/* Policy Assistant */
+.legacy-assistant { border:2px solid #1C3F35; border-radius:4px; box-shadow:7px 7px 0 #244D3F; overflow:hidden; background:#fff; }
+.legacy-assistant-header { background:#1C3F35; color:#fff; padding:14px 16px; }
+.legacy-assistant-body { background:#ECE7DC; background-image:radial-gradient(#D5CEC0 1.5px, transparent 1.5px); background-size:16px 16px; min-height:340px; max-height:520px; overflow:auto; padding:18px; color:#1C3F35 !important; }
+.legacy-assistant-message { max-width:88%; padding:12px 15px; border:1.5px solid #1C3F35; border-radius:4px; box-shadow:2px 2px 0 #1C3F35; margin-bottom:14px; background:#fff; color:#1C3F35 !important; opacity:1; visibility:visible; }
+.legacy-assistant-message.user { margin-left:auto; background:#E2F4E9; color:#1C3F35 !important; }
+.legacy-assistant-source { margin-top:9px; padding-top:8px; border-top:1px dashed #AFBEA7; font-family:var(--font-mono); font-size:.68rem; color:#4A635B; }
+
+.legacy-login-shell { background:#FAF5E8 !important; color:#1C3F35 !important; background-image:linear-gradient(#E5DEC9 1px,transparent 1px),linear-gradient(90deg,#E5DEC9 1px,transparent 1px) !important; background-size:28px 28px !important; }
+.legacy-login-shell button { border-radius:4px !important; }
+.legacy-login-shell .bg-slate-950,
+.legacy-login-shell .bg-\[\#1C3F35\]\/90 { background:#fff !important; }
+.legacy-login-shell .text-white { color:#1C3F35 !important; }
+.legacy-login-shell .text-slate-100,
+.legacy-login-shell .text-slate-200,
+.legacy-login-shell .text-slate-300 { color:#1C3F35 !important; }
+.legacy-login-shell .text-slate-400,
+.legacy-login-shell .text-slate-500 { color:#4A635B !important; }
+.legacy-login-shell .border-slate-800,
+.legacy-login-shell .border-slate-700 { border-color:#1C3F35 !important; }
+.legacy-login-shell .shadow-2xl,
+.legacy-login-shell .shadow-lg { box-shadow:7px 7px 0 #244D3F !important; }
+.legacy-login-shell .bg-blue-600 { background:#285443 !important; border:2px solid #1C3F35 !important; box-shadow:3px 3px 0 #1C3F35 !important; }
+.legacy-login-shell .bg-blue-600\/15 { background:#EDF6EB !important; }
+.legacy-login-shell input { background:#FAF8F2 !important; color:#1C3F35 !important; border-color:#1C3F35 !important; }
+
+/* Official Google Sign-in button per Google Workspace skill requirements */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid #747775 !important;
+  -webkit-border-radius: 4px !important;
+  border-radius: 4px !important;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f !important;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif !important;
+  font-size: 14px !important;
+  height: 40px !important;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px !important;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 400px;
+  min-width: min-content;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  font-family: 'Roboto', arial, sans-serif !important;
+  font-weight: 500 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  color: #1f1f1f !important;
+}
+.gsi-material-button:hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15) !important;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15) !important;
+  background-color: #f7f9fa !important;
+}
+

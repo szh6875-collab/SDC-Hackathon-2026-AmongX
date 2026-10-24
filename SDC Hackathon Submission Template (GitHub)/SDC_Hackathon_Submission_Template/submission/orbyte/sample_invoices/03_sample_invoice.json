@@ -1,0 +1,43 @@
+{
+  "documentType": "Invoice",
+  "invoiceNumber": "INV-2026-00125",
+  "invoiceDate": "2026-10-21",
+  "currency": "MYR",
+  "supplier": {
+    "name": "ORBYTE DEMO SUPPLIER SDN. BHD.",
+    "tin": "C1234567890",
+    "brn": "202601234567",
+    "sst": "W10-1234-56789012"
+  },
+  "buyer": {
+    "name": "ORBYTE DEMO BUYER SDN. BHD.",
+    "tin": "C9876543210",
+    "brn": "202609876543"
+  },
+  "items": [
+    {
+      "description": "Cloud Accounting Subscription",
+      "quantity": 1,
+      "unit": "month",
+      "unitPrice": 350,
+      "amount": 350
+    },
+    {
+      "description": "Compliance Review Service",
+      "quantity": 2,
+      "unit": "service",
+      "unitPrice": 450,
+      "amount": 900
+    }
+  ],
+  "totals": {
+    "subtotal": 1250,
+    "taxRate": 0.08,
+    "taxAmount": 100,
+    "totalPayable": 1350
+  },
+  "validation": {
+    "uuid": "DEMO-INV-2026-00125",
+    "qrPayload": "SYNTHETIC-DEMO-PAYLOAD"
+  }
+}

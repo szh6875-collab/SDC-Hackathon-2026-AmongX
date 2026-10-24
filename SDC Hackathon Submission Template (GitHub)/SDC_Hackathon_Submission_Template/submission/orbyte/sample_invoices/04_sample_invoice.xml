@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice>
+  <DocumentType>Invoice</DocumentType><InvoiceNumber>INV-2026-00125</InvoiceNumber><InvoiceDate>2026-10-21</InvoiceDate><Currency>MYR</Currency>
+  <Supplier><Name>ORBYTE DEMO SUPPLIER SDN. BHD.</Name><TIN>C1234567890</TIN><BRN>202601234567</BRN><SST>W10-1234-56789012</SST></Supplier>
+  <Buyer><Name>ORBYTE DEMO BUYER SDN. BHD.</Name><TIN>C9876543210</TIN><BRN>202609876543</BRN></Buyer>
+  <InvoiceLines><Line><Description>Cloud Accounting Subscription</Description><Quantity>1</Quantity><Unit>month</Unit><UnitPrice>350.00</UnitPrice><Amount>350.00</Amount></Line><Line><Description>Compliance Review Service</Description><Quantity>2</Quantity><Unit>service</Unit><UnitPrice>450.00</UnitPrice><Amount>900.00</Amount></Line></InvoiceLines>
+  <Totals><Subtotal>1250.00</Subtotal><TaxRate>0.08</TaxRate><TaxAmount>100.00</TaxAmount><TotalPayable>1350.00</TotalPayable></Totals>
+  <Validation><UUID>DEMO-INV-2026-00125</UUID><QRPayload>SYNTHETIC-DEMO-PAYLOAD</QRPayload></Validation>
+</Invoice>
