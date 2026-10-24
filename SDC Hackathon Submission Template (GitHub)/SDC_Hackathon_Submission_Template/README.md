@@ -166,6 +166,7 @@ Wong Shun Bing:
 - **Messy input:** Chat messages mix English, Malay and Manglish, and amounts appear as "RM 11,200", "RM11200" or "11200 ringgit". We used AI only to read the text, kept compliance decisions in deterministic rules, and added a regex fallback.
 - **Rules keep changing:** The exemption threshold changed on 1 September 2026, so every rule carries a clear source and verified flag, and policy updates need Owner approval.
 - **What we learned:** Clear roles, a shared API contract and short written updates matter more than long meetings for a remote team. Planning around everyone's workload and doing the essential parts first kept the project deliverable.
+- **Unfamiliar people and coding:** Collaborate at speed with relative strangers online using unfamiliar even new tools — ambiguity and exhaustion, not code, are the real adversaries.
 
 ## Future Improvements
 
