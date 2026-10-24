@@ -1,10 +1,10 @@
-# Orbyte InvoisReady
+# Orbyte InvoisReady (DONE)
 
 > A web app that helps Malaysian SME owners check WhatsApp e-invoice requests against the latest LHDN rules, with a human approving every draft before anything is issued.
 
 ---
 
-## Team Information
+## Team Information (DONE)
 
 | Field                  | Details                                     |
 | ---------------------- | ------------------------------------------- |
@@ -15,28 +15,28 @@
 | **University**         | HELP University and University Malaya       |
 | **Number of Members**  | 4                                           |
 
-## Links
+## Links (Haven't Done)
 
-| Resource          | Link                                           |
-| ----------------- | ---------------------------------------------- |
-| GitHub Repository | https://github.com/your-username/your-project  |
-| Replit Project    | https://replit.com/@your-username/your-project |
-| Live Demo         | https://your-project.replit.app                |
-| RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id      |
-| Slide Deck        | https://example.com/slides                     |
-| Demo Video        | https://example.com/demo-video                 |
+| Resource          | Link                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| GitHub Repository | (https://github.com/szh6875-collab/SDC-Hackathon-2026-AmongX.git) |
+| Replit Project    | https://replit.com/@your-username/your-project                    |
+| Live Demo         | https://your-project.replit.app                                   |
+| RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id                         |
+| Slide Deck        | https://example.com/slides                                        |
+| Demo Video        | https://example.com/demo-video                                    |
 
 ---
 
 ## Overview
 
-### Problem
+### Problem (DONE)
 Malaysian micro and small businesses run on WhatsApp, spreadsheets and manual follow-up. Since e-invoicing began in August 2024, owners must turn chat messages into LHDN-compliant e-invoices while the rules keep changing (for example, the exemption threshold rising from RM1 million to RM3 million from 1 September 2026). A busy owner or clerk has to decide from memory whether the amount forces an individual invoice, whether the buyer's TIN is present and whether the rule they remember is still current. Mistakes can attract reported fines of RM200 to RM20,000 per offence, and small firms cannot afford consultants.
 
-### Solution
+### Solution (DONE)
 Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer's WhatsApp message arrives, a Policy Checker Agent extracts the amount and buyer TIN, and deterministic Python rules decide pass, missing or fail against the current policy pack. Only the Owner role can approve a draft, and every action is written to a hash-chained audit log. AI is used only to read messy English, Malay and Manglish messages and to propose policy updates for human approval; it never decides compliance. The app only prepares drafts. It never files with LHDN, handles payments or gives legal or tax advice.
 
-### Key Features
+### Key Features (Add if have extra)
 
 **WhatsApp automation** — Reads a chat message, extracts amount and TIN, and shows green / yellow / red rule checks with the source rule.
 **Policy Checker** — Syncs a new rule pack, shows a diff, and applies it only after Owner approval. Each rule carries a clause, source and verified flag.
@@ -45,7 +45,7 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 **AI with fallback** — RunPod-hosted model for extraction, with a regex extractor if the AI service is slow or offline.
 **Blueprints** — Exempt Shield, Smart Consolidator and 72-Hour SLA Chaser.
 
-### Tech Stack
+### Tech Stack (HAVEN'T DONE)
 
 | Layer         | Technology                   |
 | ------------- | ---------------------------- |
@@ -57,7 +57,7 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 
 ---
 
-## Project Structure
+## Project Structure (DOUBLE CHECK)
 .
 ├── data/
 │   ├── hub.json                 # Simulated Orbyte hub data (synthetic)
@@ -89,7 +89,7 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 ├── requirements.txt
 └── README.md
 
-### Architecture
+### Architecture (DOUBLE CHECK)
 Browser (static/ + fetch with X-Role header)
         │
         ▼
