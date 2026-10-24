@@ -50,7 +50,7 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 | Layer         | Technology                   |
 | ------------- | ---------------------------- |
 | Frontend      | HTML, CSS, JavaScript        |
-| Backend       | Replit                       |
+| Backend       | JavaScript, TypeScript, SQL, Replit |
 | Database      | JSON files (hub, policy packs, announcements, audit log), all synthetic, Supabase |
 | AI / Compute  | Gemini AI Studio             |
 | Hosting / Dev | Replit, GitHub               |
