@@ -23,7 +23,7 @@
 | Replit Project    | https://replit.com/@your-username/your-project                    |
 | Live Demo         | https://your-project.replit.app                                   |
 | RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id                         |
-| Slide Deck        | https://example.com/slides                                        |
+| Slide Deck        | [https://example.com/slides ](https://gamma.app/docs/A-safer-way-to-get-e-invoices-ready-7nw2r6dvxsfd36p?mode=doc)                                       |
 | Demo Video        | https://example.com/demo-video                                    |
 
 ---
