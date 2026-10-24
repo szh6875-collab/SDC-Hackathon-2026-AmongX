@@ -13,7 +13,7 @@
 | **SDG Track (1–17)**   | SDG 8 — Decent Work and Economic Growth (relevant: SDG 9) |
 | **Team Leader**        | Soh Zheng Hao                               |
 | **University**         | HELP University and University Malaya       |
-| **Number of Members**  | 4                                           |
+| **Number of Members**  | 5                                           |
 
 ## Links (Haven't Done)
 
