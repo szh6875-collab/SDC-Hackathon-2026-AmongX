@@ -20,8 +20,8 @@
 | Resource          | Link                                                              |
 | ----------------- | ----------------------------------------------------------------- |
 | GitHub Repository | (https://github.com/szh6875-collab/SDC-Hackathon-2026-AmongX.git) |
-| Replit Project    | https://replit.com/@your-username/your-project                    |
-| Live Demo         | https://your-project.replit.app                                   |
+| Replit Project    | https://orbyte-zip.replit.app/app                  |
+| Live Demo         | https://orbyte-zip.replit.app/app                                  |
 | RunPod Endpoint   | https://api.runpod.ai/v2/your-endpoint-id                         |
 | Slide Deck        | https://gamma.app/docs/A-safer-way-to-get-e-invoices-ready-7nw2r6dvxsfd36p?mode=doc|
 | Demo Video        | https://example.com/demo-video                                    |
