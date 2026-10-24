@@ -145,10 +145,6 @@ python -m unittest discover tests
 
 ## How We Use Replit *(Required)* (Done)
 
-Soh Zheng Hao:
-- **:** 
-📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`]
-
 Lee Wei Yeng:
 - **Development:** I use Replit’s edit and optimise code for our hackathon project. I use them to improve the HTML, CSS, and JavaScript, refine the website layout and test the prototype.
 📄 Proof of use: [`submission/REPLIT PROOF OF USE.pdf`](https://drive.google.com/file/d/1c7mcnP-Hnb7Ty2PdNukc-AhvTb3ow1oJ/view?usp=drivesdk)
