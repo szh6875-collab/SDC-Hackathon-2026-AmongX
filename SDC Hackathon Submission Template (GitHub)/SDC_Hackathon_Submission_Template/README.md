@@ -169,8 +169,17 @@ Wong Shun Bing:
 
 ## Future Improvements
 
-- [ ] Improvement 1
-- [ ] Improvement 2
+- [ Smarter Policy Impact Analysis
+Instead of only explaining what a policy says, Orbyte can determine how a policy change affects a specific business.
+For example: “The minimum wage has changed. Your company has 18 employees, and 6 employees may be affected. Estimated monthly impact: RMXXX. Recommended action: Review payroll before the effective date.”This would make Orbyte more actionable and valuable for SME owners.] Improvement 1
+- [Accounting & ERP Integration Future versions could integrate with popular SME accounting systems such as:
+- SQL Accounting
+- AutoCount
+- Xero
+- QuickBooks
+- Bukku
+This would allow Orbyte to work directly with existing business data instead of requiring SMEs to manually upload information.] Improvement 2
+
 
 ## Team (Done)
 
@@ -186,7 +195,7 @@ Wong Shun Bing:
 
 ## Submission Checklist
 
-- [DONE] Team name, domain (Domain 1 / Domain 2) and SDG track filled in
+- [DONE] AmongX, domain (Domain 1 / Domain 2) and SDG track filled in
 - [ ] Slide deck link added
 - [ ] Demo video link added
 - [ ] Replit used, with proof of use in `submission/`
