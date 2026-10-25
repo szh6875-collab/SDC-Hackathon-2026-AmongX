@@ -36,7 +36,7 @@ Malaysian micro and small businesses run on WhatsApp, spreadsheets and manual fo
 ### Solution (DONE)
 Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer's WhatsApp message arrives, a Policy Checker Agent extracts the amount and buyer TIN, and deterministic Python rules decide pass, missing or fail against the current policy pack. Only the Owner role can approve a draft, and every action is written to a hash-chained audit log. AI is used only to read messy English, Malay and Manglish messages and to propose policy updates for human approval; it never decides compliance. The app only prepares drafts. It never files with LHDN, handles payments or gives legal or tax advice.
 
-### Key Features (Add if have extra)
+### Key Features (DONE)
 
 - **WhatsApp automation** — Reads a chat message, extracts amount and TIN, and shows green / yellow / red rule checks with the source rule.
 - **Policy Checker** — Syncs a new rule pack, shows a diff, and applies it only after Owner approval. Each rule carries a clause, source and verified flag.
