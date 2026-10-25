@@ -15,7 +15,7 @@
 | **University**         | HELP University and University Malaya       |
 | **Number of Members**  | 5                                           |
 
-## Links (Haven't Done)
+## Links (Done)
 
 | Resource          | Link                                                              |
 | ----------------- | ----------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Orbyte InvoisReady is a plug-in module for the Orbyte business hub. When a buyer
 - **AI with fallback** — RunPod-hosted model for extraction, with a regex extractor if the AI service is slow or offline.
 - **Blueprints** — Exempt Shield, Smart Consolidator and 72-Hour SLA Chaser.
 
-### Tech Stack (HAVEN'T DONE)
+### Tech Stack (DONE)
 
 | Layer         | Technology                   |
 | ------------- | ---------------------------- |
@@ -171,7 +171,7 @@ This would allow Orbyte to work directly with existing business data instead of 
 - [DONE] Replit used, with proof of use in `submission/`
 - [DONE] RunPod used, with proof of use in `submission/`
 - [DONE] Submission template completed in `submission/`
-- [ ] "How to Run" steps verified
+- [DONE] "How to Run" steps verified
 - [DONE] No API keys or secrets committed to the repository
 
 ## License
